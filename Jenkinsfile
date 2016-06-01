@@ -1,5 +1,6 @@
 stage 'Dev'
 node {
     checkout scm
-    mvn 'clean package'
+    def mvnHome = tool 'Maven'
+    sh "${mvnHome}/bin/mvn clean install"
 }
